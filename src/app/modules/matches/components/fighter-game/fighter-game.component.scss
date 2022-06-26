@@ -1,0 +1,65 @@
+@import "src/styles/colors.scss";
+@import "src/styles/mixims.scss";
+
+$max-width: 890px;
+
+// Style for loader just in case website takes longer to retrieve data
+.loading__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.card {
+  margin: 2rem 4rem;
+  @media only screen and (max-width: 400px) {
+    margin: 2rem;
+  }
+  &__subtitle {
+    margin-top: 0.5rem;
+    max-width: 22rem;
+  }
+  &__body {
+    position: relative;
+    display: flex;
+    @media only screen and (max-width: $lg-size) {
+      flex-direction: column;
+      align-self: center;
+    }
+
+    .information {
+      position: absolute;
+      text-align: center;
+      width: 3rem;
+      top: 3rem;
+    }
+
+    &__image {
+      padding: 1rem;
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+      @media only screen and (max-width: $md-size) {
+        margin-top: 2rem;
+        max-width: 25rem;
+      }
+    }
+  }
+
+  &__information {
+    width: 100%;
+    max-width: 32rem;
+  }
+}
+
+.mobile-view {
+  @import "src/styles/mobile-view.scss";
+}
+
+.desktop-view {
+  @import "src/styles/desktop-view.scss";
+}

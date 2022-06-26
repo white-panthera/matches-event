@@ -1,0 +1,114 @@
+<ng-container *ngIf="loading; else matchInformationTemplate">
+  <div class="loading__container">
+    <fight-loader></fight-loader>
+  </div>
+</ng-container>
+
+<ng-template #matchInformationTemplate>
+  <ng-container *ngIf="matchInformation; else errorTemplate">
+
+    <div class="card">
+      <div class="card__header">
+        <h1 class="display">
+          <span class="text-shadow--danger">{{matchInformation?.title?.primary}}
+          </span>
+          <span class="text-shadow--default">{{matchInformation?.title?.secondary}}</span>
+        </h1>
+        <div class="subtitle card__subtitle">
+          <div>{{ matchInformation.description }}</div>
+        </div>
+      </div>
+  
+      <div class="card__body main">
+        <div class="card__information">
+          <ng-container *ngIf="!showMobile; else mobileViewTemplate">
+            <ng-container *ngTemplateOutlet="cardWebsiteBodyTemplate"></ng-container>
+          </ng-container>
+        </div>
+        <div class="card__body__image">
+          <img [@cardAnimator]="animationState" (@cardAnimator.done)="resetAnimationState()"
+            (swipeleft)="startAnimation('slideOutLeft')" (swiperight)="startAnimation('slideOutRight')"
+            [src]="'assets/' + selected.image" alt="" />
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  
+</ng-template>
+
+
+<ng-template #errorTemplate>
+  <div class="error">
+    <div class="error_loading">
+      Failed to load
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #cardWebsiteBodyTemplate>
+  <div class="desktop-view">
+    <div class="information main">
+      (Eta)
+    </div>
+
+    <div id="dot-slider">
+      <ng-container *ngFor="let match of matchInformation.matches;  let i = index">
+        <div class="match" [ngClass]="{'selected': match == selected }" (click)="onSelection(match)">
+          <input type="radio" name="dot-amount" [id]="i" [value]="i" />
+          <label [for]="i" class="match__data">
+            <div class="match__information">
+              <h2 class="match__information__time">{{ match.time }}</h2>
+
+              <div class="circle"></div>
+            </div>
+
+            <div class="opponents">
+              <div class="fighter">
+                <h3 class="fighter__name font--firstname golden--color" >
+                  {{match.fighter.first_name}}
+                </h3>
+                <h1 class="fighter__surname" [ngClass]="{'active': match == selected }">
+                  {{match.fighter.last_name}}
+                </h1>
+              </div>
+              <div class="main">
+                vs
+              </div>
+              <div class="opponent">
+                <h3 class="fighter__name font--firstname golden--color">
+                  {{match.opponent.first_name}}
+                </h3>
+                <h1 class="fighter__surname" [ngClass]="{'active': match == selected }">
+                  {{match.opponent.last_name}}
+                </h1>
+              </div>
+            </div>
+          </label>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #mobileViewTemplate>
+  <div class="mobile-view">
+    <div class="information main">
+      (Eta)
+    </div>
+
+    <div id="dot-slider">
+      <ng-container *ngFor="let match of matchInformation.matches;  let i = index">
+        <div class="match" [ngClass]="{'selected': match == selected }" (click)="onSelection(match)">
+          <input type="radio" name="dot-amount" [id]="i" [value]="i" />
+          <label [for]="i" class="match__data">
+            <div class="match__information">
+              <h2 class="match__information__time">{{ match.time }}</h2>
+
+              <div class="circle"></div>
+            </div>
+          </label>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</ng-template>
