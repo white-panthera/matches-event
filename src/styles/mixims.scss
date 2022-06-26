@@ -1,0 +1,35 @@
+$xxs-size: 300px;
+$xs-size: 424px;
+$xd-size: 500px;
+$md-size: 768px;
+$lg-size: 890px;
+
+@mixin outline-color($color: #fff) {
+  text-shadow:
+    -1px -1px 0px $color,
+    0px -1px 0px $color,
+    1px -1px 0px $color,
+    -1px 0px 0px $color,
+    1px 0px 0px $color,
+    -1px 1px 0px $color,
+    0px 1px 0px $color,
+    1px 1px 0px $color;
+}
+
+
+@mixin circle($color: #fff, $size: 18px, $option: 1) {
+  @if ($option==2) {
+    border-radius: 50%;
+    width: $size;
+    height: $size;
+    background: rgba($color, 1);
+    transform: translate(38%, 38%);
+  }
+
+  @else {
+    width: $size;
+    height: $size;
+    background: rgba($color, 0);
+    border-radius: 50%;
+  }
+}

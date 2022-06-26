@@ -1,0 +1,99 @@
+@import "src/styles/mixims.scss";
+
+.match {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  input {
+    display: none;
+  }
+
+  &:last-child {
+    &.selected {
+      label {
+        .circle {
+          background: rgba($secondary-color, 0.2);
+        }
+      }
+    }
+    label {
+      .circle {
+        background: rgba($secondary-color, 0);
+        &::before {
+          content: "";
+          position: absolute;
+          @include circle($secondary-color, 10px, 2);
+        }
+      }
+    }
+  }
+
+  &.selected {
+    .circle {
+      background: rgba($danger-color, 0.2);
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        @include circle($danger-color, 10px, 2);
+      }
+    }
+  }
+
+  &__data {
+    display: flex;
+
+    .circle {
+      @include circle($danger-color, 18px);
+      &::before {
+        content: "";
+        position: absolute;
+        @include circle($danger-color, 10px, 2);
+      }
+    }
+  }
+
+  &.selected {
+    opacity: 1;
+  }
+
+  opacity: 0.5;
+  &__information {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+}
+
+#dot-slider {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: space-around;
+  width: 100%;
+  height: 50px;
+
+  &::before {
+    content: "";
+    width: 80%;
+    height: 2px;
+    background: $danger-color;
+    position: absolute;
+    left: 3rem;
+    top: 3rem;
+    z-index: 0;
+
+    @media (min-width: 600px) and (max-width: $md-size) {
+        left: 3rem;
+    }
+
+    @media (min-width: $xxs-size) and (max-width: 599px) {
+        left: 2rem;
+    }
+  }
+}

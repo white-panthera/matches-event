@@ -1,0 +1,113 @@
+@import "colors.scss";
+@import "mixims.scss";
+
+$nimbus-sans-extended: nimbus-sans-extended, sans-serif;
+$nimbus-sans-condensed: nimbus-sans-condensed, sans-serif;
+$nimbus-sans: nimbus-sans, sans-serif;
+
+$display-font-color: #000;
+$subtitle-font-color: #fff;
+$heading-font-color: #fff;
+$main-font-color: #fff;
+
+h1,
+h2,
+h3 {
+  font-family: $nimbus-sans-condensed, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  color: $heading-font-color;
+  @extend .text--uppercase;
+}
+
+h1 {
+  &.active {
+    font-size: 2.188rem; // 35px;
+    line-height: 2.625rem; // 42px;
+  }
+  font-size: 1.875rem; // 30px;
+  line-height: 2.25rem; // 36px;
+  letter-spacing: 0.02em;
+  @media only screen and (max-width: $md-size) {
+    font-size: 2.188rem; // 35px;
+    line-height: 2.625rem; // 42px;
+  }
+
+}
+
+h2 {
+  font-size: 1.563rem; // 25px;
+  line-height: 1.875rem; // 30px;
+  @media only screen and (max-width: $md-size) {
+    font-size: 1.438rem; // 23px;
+    line-height: 1.75rem; // 28px;
+  }
+}
+
+h3 {
+  font-size: 1rem; // 16px
+  line-height: 1.2rem; // 19.2px;
+  text-align: center;
+  @media only screen and (max-width: $md-size) {
+    font-size: 0.875rem; // 14px;
+    line-height: 1.063rem; // 17px;
+  }
+}
+
+.text--uppercase {
+  text-transform: uppercase;
+}
+
+.text-shadow {
+  &--default {
+    @include outline-color();
+  }
+
+  &--danger {
+    @include outline-color($danger-color);
+  }
+}
+
+.display {
+  font-family: $nimbus-sans-extended;
+  font-weight: 400;
+  color: $display-font-color;
+  font-size: 6.438rem; // 103px;
+  line-height: 7.725rem; // 123.6px;
+
+  @media only screen and (max-width: $md-size) {
+    font-size: 3.188rem; // 51px;
+    line-height: 3.825rem; // 61.2px;
+  }
+  @media only screen and (max-width: $xs-size) {
+    font-size: 2.488rem;
+  }
+}
+
+.subtitle {
+  font-family: $nimbus-sans-extended;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.063rem; // 17px;
+  line-height: 1.25rem; // 20px;
+  color: $subtitle-font-color;
+
+  @media only screen and (max-width: $md-size) {
+    font-size: 0.938rem; // 15px;
+    line-height: 1.125rem; // 18px;
+  }
+}
+
+.main {
+  font-family: nimbus-sans, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.938rem; // 15px;
+  line-height: 1.125rem; // 18px;
+  @extend .text--uppercase;
+  color: $main-font-color;
+  @media only screen and (max-width: $md-size) {
+    font-size: 0.813rem; // 13px;
+    line-height: 0.938rem; // 15px;
+  }
+}
