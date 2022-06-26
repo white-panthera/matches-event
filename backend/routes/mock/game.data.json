@@ -1,0 +1,80 @@
+{
+    "title": [
+      "Fight",
+      "Card"
+    ],
+    "description": "SUNDAY, DECEMBER 07 2019 - 10PM DIRIYAH, SAUDI ARABIA",
+    "matches": [
+      {
+        "time": "19:00",
+        "image": "match1.png",
+        "fighters": [
+          {
+            "name": "MAGOMEDRASUL",
+            "surname": "MAJIDOV"
+          },
+          {
+            "name": "TOM",
+            "surname": "LITTLE"
+          }
+        ]
+      },
+      {
+        "time": "20:07",
+        "image": "match2.png",
+        "fighters": [
+          {
+            "name": "FILIP",
+            "surname": "HRGOVIĆ"
+          },
+          {
+            "name": "ERIC",
+            "surname": "MOLINA"
+          }
+        ]
+      },
+      {
+        "time": "21:07",
+        "image": "match3.png",
+        "fighters": [
+          {
+            "name": "DILLIAN",
+            "surname": "WHYTE"
+          },
+          {
+            "name": "MARIUSZ",
+            "surname": "WACH"
+          }
+        ]
+      },
+      {
+        "time": "22:07",
+        "image": "match4.png",
+        "fighters": [
+          {
+            "name": "ALEXANDER",
+            "surname": "POVETKIN"
+          },
+          {
+            "name": "MICHAEL",
+            "surname": "HUNTER"
+          }
+        ]
+      },
+      {
+        "time": "00:00",
+        "image": "match5.png",
+        "fighters": [
+          {
+            "name": "ANDY",
+            "surname": "RUIZ JR."
+          },
+          {
+            "name": "ANTHONY",
+            "surname": "JOSHUA 2"
+          }
+        ]
+      }
+    ]
+  }
+  
